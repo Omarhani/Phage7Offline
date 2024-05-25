@@ -14,6 +14,10 @@ public class HomePage {
 
     private final By dynamicLoadingLink = By.linkText("Dynamic Loading");
 
+    private final By dropDownLink = By.linkText("Dropdown");
+
+    private final By jsAlertsLink = By.linkText("JavaScript Alerts");
+
     public LoginPage clickOnFormAuthenticationLink(){
         driver.findElement(formAuthenticationLink).click();
         return new LoginPage(driver);
@@ -21,5 +25,15 @@ public class HomePage {
     public DynamicLoadingPage clickOnDynamicLoadingLink(){
         driver.findElement(dynamicLoadingLink).click();
         return new DynamicLoadingPage(driver);
+    }
+
+    public DropDownPage clickOnDropDownLink(){
+        driver.findElement(dropDownLink).click();
+        return new DropDownPage(driver);
+    }
+
+    public JSAlertsPage clickOnJSAlertsLink(){
+        driver.findElement(jsAlertsLink).click();
+        return new JSAlertsPage(driver);
     }
 }
