@@ -18,22 +18,37 @@ public class HomePage {
 
     private final By jsAlertsLink = By.linkText("JavaScript Alerts");
 
+    private final By hoverLink = By.linkText("Hovers");
+
+    private final By dragAndDropLink = By.linkText("Drag and Drop");
+
     public LoginPage clickOnFormAuthenticationLink(){
-        driver.findElement(formAuthenticationLink).click();
+        clickOnLink(formAuthenticationLink);
         return new LoginPage(driver);
     }
     public DynamicLoadingPage clickOnDynamicLoadingLink(){
-        driver.findElement(dynamicLoadingLink).click();
+        clickOnLink(dynamicLoadingLink);
         return new DynamicLoadingPage(driver);
     }
 
     public DropDownPage clickOnDropDownLink(){
-        driver.findElement(dropDownLink).click();
+        clickOnLink(dropDownLink);
         return new DropDownPage(driver);
     }
 
     public JSAlertsPage clickOnJSAlertsLink(){
-        driver.findElement(jsAlertsLink).click();
+        clickOnLink(jsAlertsLink);
         return new JSAlertsPage(driver);
+    }
+    public HoverPage clickOnHoverLink(){
+        clickOnLink(hoverLink);
+        return new HoverPage(driver);
+    }
+    public DragAndDropPage clickOnDragAndDropLink(){
+        clickOnLink(dragAndDropLink);
+        return new DragAndDropPage(driver);
+    }
+    private void clickOnLink(By locator){
+        driver.findElement(locator).click();
     }
 }
